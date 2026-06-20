@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   tech: string[];
   github?: string;
+  liveUrl?: string;
   category: string;
 }
 
@@ -94,6 +95,15 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "mediahub-downloader",
+    title: "MediaHub Downloader",
+    description: "A high-performance media compilation and downloading platform designed to seamlessly query, fetch, and download rich media metadata and direct assets from online video feeds.",
+    tech: ["Python", "Flask", "Tailwind CSS", "JavaScript"],
+    github: "https://github.com/sriramulaarun/mediahub-downloader.git",
+    liveUrl: "https://skillful-happiness-production-cfee.up.railway.app",
+    category: "Full Stack"
+  },
+  {
     id: "timetable",
     title: "College Timetable Management System",
     description: "Smart timetable generation platform for colleges with dedicated faculty, student, and admin modules to optimize scheduling and prevent slot clashes.",
@@ -170,6 +180,14 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const GITHUB_REPOS = [
+  {
+    name: "mediahub-downloader",
+    stars: 15,
+    forks: 6,
+    description: "Fast, versatile video/audio downloader suite built with Flask for streamlined offline media aggregation.",
+    languages: ["Python", "HTML", "JavaScript"],
+    url: "https://github.com/sriramulaarun/mediahub-downloader.git"
+  },
   {
     name: "smart-city-app",
     stars: 12,

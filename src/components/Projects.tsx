@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { PROJECTS, Project } from "../data";
-import { Github, ExternalLink, Code2, ShieldAlert, Sparkles, X, ChevronRight } from "lucide-react";
+import { Github, ExternalLink, Code2, ShieldAlert, Sparkles, X, ChevronRight, Download, Terminal } from "lucide-react";
 
 export default function Projects() {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
@@ -45,6 +45,8 @@ export default function Projects() {
                   <Sparkles size={80} className="text-purple-500/10 absolute -right-6 -bottom-4 rotate-12" />
                 ) : proj.id === "community-hub" ? (
                   <Code2 size={80} className="text-blue-500/10 absolute -right-6 -bottom-4 rotate-12" />
+                ) : proj.id === "mediahub-downloader" ? (
+                  <Download size={80} className="text-pink-500/10 absolute -right-6 -bottom-4 rotate-12" />
                 ) : (
                   <ShieldAlert size={80} className="text-violet-500/10 absolute -right-6 -bottom-4 rotate-12" />
                 )}
@@ -59,6 +61,8 @@ export default function Projects() {
                     <Sparkles size={32} className="text-purple-400" />
                   ) : proj.id === "community-hub" ? (
                     <Code2 size={32} className="text-blue-400" />
+                  ) : proj.id === "mediahub-downloader" ? (
+                    <Download size={32} className="text-pink-400" />
                   ) : (
                     <ShieldAlert size={32} className="text-violet-400" />
                   )}
@@ -111,13 +115,25 @@ export default function Projects() {
                           <Github size={14} />
                         </a>
                       )}
+
+                      {proj.liveUrl && (
+                        <a
+                          href={proj.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/20 text-blue-300 hover:text-white transition-colors"
+                          title="View Live Demo"
+                        >
+                          <ExternalLink size={14} />
+                        </a>
+                      )}
                       
                       <button
                         onClick={() => setActiveProject(proj)}
                         className="p-2 rounded-lg bg-purple-600/10 hover:bg-purple-600/20 border border-purple-500/20 text-purple-300 hover:text-white transition-colors cursor-pointer"
                         title="Display Details"
                       >
-                        <ExternalLink size={14} />
+                        <Terminal size={14} />
                       </button>
                     </div>
                   </div>
@@ -222,6 +238,11 @@ export default function Projects() {
                       Utilizes Firebase Firestore database listeners for state updates across multiple collaboration boards. Features secured OAuth endpoints protecting user spaces, private messaging forums, and community dynamic lists.
                     </p>
                   )}
+                  {activeProject.id === "mediahub-downloader" && (
+                    <p className="text-slate-400 leading-relaxed">
+                      Engineered with an asynchronous worker pipeline designed to parse incoming URL media feeds, extract secure direct audio/video streaming streams, and assemble complete download assets instantly while showing accurate transfer status updates.
+                    </p>
+                  )}
                   {activeProject.id === "timetable" && (
                     <p className="text-slate-400 leading-relaxed">
                       Engineered backplane algorithm to dynamically align slots across classes, teachers, and student groups, resolving scheduling overlaps through constraint satisfaction models and SQLite query caching.
@@ -241,6 +262,17 @@ export default function Projects() {
                   >
                     <Github size={14} />
                     <span>View Repository</span>
+                  </a>
+                )}
+                {activeProject.liveUrl && (
+                  <a
+                    href={activeProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-[#0d1637]/80 hover:bg-[#111e4c] border border-blue-500/35 rounded-xl font-mono text-xs text-blue-300 hover:text-white transition-colors flex items-center space-x-2"
+                  >
+                    <ExternalLink size={14} />
+                    <span>Visit Live Demo</span>
                   </a>
                 )}
                 <button
