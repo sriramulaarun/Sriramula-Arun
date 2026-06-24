@@ -228,6 +228,11 @@ export default function Projects() {
                 {/* Extended description/mock parameters */}
                 <div className="space-y-2 text-xs">
                   <h4 className="text-white font-semibold font-sans">Architectural Highlights</h4>
+                  {activeProject.id === "network-sniffer" && (
+                    <p className="text-slate-400 leading-relaxed">
+                      Developed as a core deliverable during a Cybersecurity Internship, this sniffer integrates Scapy and low-level raw socket handling to parse and dissect network layer headers (IPv4, TCP, UDP, ICMP), validating checksum structures and logging packet metadata for proactive anomaly auditing.
+                    </p>
+                  )}
                   {activeProject.id === "max-ai" && (
                     <p className="text-slate-400 leading-relaxed">
                       Features a pipeline including automated speech-to-text processing, conversational memory retention pools, and smart OS level automation scripts built entirely in Flask microservices and integrated with private LLM reasoning clients.

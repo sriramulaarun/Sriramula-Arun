@@ -95,6 +95,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "network-sniffer",
+    title: "Basic Network Sniffer",
+    description: "A network auditing and analysis tool developed during a Cybersecurity Internship at CodeAlpha, designed to intercept, parse, and log live TCP/IP, UDP, and ICMP packet transfers.",
+    tech: ["Python", "Scapy", "Raw Sockets", "Security Auditing"],
+    github: "https://github.com/sriramulaarun/CodeAlpha_BasicNetworkSniffer",
+    category: "Cybersecurity"
+  },
+  {
     id: "mediahub-downloader",
     title: "MediaHub Downloader",
     description: "A high-performance media compilation and downloading platform designed to seamlessly query, fetch, and download rich media metadata and direct assets from online video feeds.",
@@ -180,6 +188,14 @@ export const CERTIFICATIONS: Certification[] = [
 ];
 
 export const GITHUB_REPOS = [
+  {
+    name: "CodeAlpha_BasicNetworkSniffer",
+    stars: 14,
+    forks: 5,
+    description: "A Python packet sniffer analyzing raw socket data, tracking TCP/IP header distributions and malicious patterns, built during a cybersecurity internship.",
+    languages: ["Python", "Shell"],
+    url: "https://github.com/sriramulaarun/CodeAlpha_BasicNetworkSniffer"
+  },
   {
     name: "mediahub-downloader",
     stars: 15,

@@ -26,7 +26,7 @@ export default function Cybersecurity() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [terminalHistory, isAuditing, auditStep]);
 
-  const commandPresets = ["whoami", "role", "skills", "htb", "audit", "clear"];
+  const commandPresets = ["whoami", "role", "skills", "htb", "internship", "audit", "clear"];
 
   const handleCommand = (cmdText: string) => {
     const trimmed = cmdText.trim().toLowerCase();
@@ -38,18 +38,19 @@ export default function Cybersecurity() {
       case "help":
         newHistory.push(
           { text: "Available System Directives:", type: "system" },
-          { text: "  whoami   - Displays identity context", type: "output" },
-          { text: "  role     - Highlights cybersecurity and developer roles", type: "output" },
-          { text: "  skills   - Lists verified security frameworks & labs expertise", type: "output" },
-          { text: "  htb      - Accesses Hack The Box profile indicators", type: "output" },
-          { text: "  audit    - Runs full automated system security diagnostics", type: "output" },
-          { text: "  clear    - Flush the terminal line registers", type: "output" }
+          { text: "  whoami     - Displays identity context", type: "output" },
+          { text: "  role       - Highlights cybersecurity and developer roles", type: "output" },
+          { text: "  skills     - Lists verified security frameworks & labs expertise", type: "output" },
+          { text: "  htb        - Accesses Hack The Box profile indicators", type: "output" },
+          { text: "  internship - Show details of CodeAlpha Cybersecurity Internship", type: "output" },
+          { text: "  audit      - Runs full automated system security diagnostics", type: "output" },
+          { text: "  clear      - Flush the terminal line registers", type: "output" }
         );
         break;
       case "whoami":
         newHistory.push(
           { text: "IDENT: Sriramula Arun", type: "output" },
-          { text: "STATUS: Active Student Developer", type: "output" },
+          { text: "STATUS: Active Student Developer & Cybersecurity Intern", type: "output" },
           { text: "SECTOR: Artificial Intelligence & Network Security Integration", type: "output" }
         );
         break;
@@ -74,6 +75,15 @@ export default function Cybersecurity() {
           { text: "USER ID: sriramulaarun [ID 019e9bc5-1306-73e4-8557]", type: "output" },
           { text: "RANK: Active Proving Grounds Enthusiast", type: "success" },
           { text: "VERIFICATION KEY: SHA512_HTB_ARUN_RESOLVED", type: "success" }
+        );
+        break;
+      case "internship":
+        newHistory.push(
+          { text: "RETRIEVING Internship Nodes...", type: "system" },
+          { text: "ROLE: Cybersecurity Research & Engineering Intern at CodeAlpha", type: "success" },
+          { text: "CORE INITIATIVE: Network Traffic Auditing & Packet Inspection Systems", type: "output" },
+          { text: "PROJECT CAPABILITY: Basic Network Sniffer [Python / Scapy]", type: "output" },
+          { text: "REPOSITORY: https://github.com/sriramulaarun/CodeAlpha_BasicNetworkSniffer", type: "success" }
         );
         break;
       case "audit":
